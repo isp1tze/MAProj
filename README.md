@@ -6,6 +6,7 @@ INFERENCE:
 - https://github.com/xuemei-ye/maddpg-mpe
 - https://github.com/bic4907/BiCNet
 - https://github.com/0b01/CommNet
+- https://github.com/starry-sky6688/StarCraft
  
  ## commnet: 
  
