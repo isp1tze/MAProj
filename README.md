@@ -26,3 +26,7 @@ INFERENCE:
 - pip install -r requirements.txt
 - cd MAProj/algo
 - python ma_main.py --algo maddpg --mode train
+
+## TO DO LIST
+- trained in more maps
+- fix graphics memory leak
