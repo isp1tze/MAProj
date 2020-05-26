@@ -21,3 +21,8 @@ INFERENCE:
 
 ## training curves:
 ![curves](https://github.com/isp1tze/MAProj/blob/master/asset/curves.png)
+
+## How to use
+- pip install -r requirements.txt
+- cd MAProj/algo
+- python ma_main.py --algo maddpg --mode train
