@@ -67,17 +67,11 @@ class BiCNet():
         self.action_log.append(action)
 
         if noisy:
-            # for agent_idx in range(self.n_agents):
-            #     pass
-                # action[agent_idx] += self.epsilon * self.random_process.sample()
             for agent_idx in range(self.n_agents):
                 action[agent_idx] += np.random.randn(2) * self.var[agent_idx]
 
                 if self.var[agent_idx] > 0.05:
                     self.var[agent_idx] *= 0.999998
-
-            # self.epsilon -= self.depsilon
-            # self.epsilon = max(self.epsilon, 0.001)
         action = np.clip(action, -1., 1.)
 
         return action
@@ -135,18 +129,6 @@ class BiCNet():
         target_next_q = self.critic_target(next_state_batches, target_next_actions)
         main_q = self.critic(state_batches, action_batches)
 
-        '''
-        How to concat each agent's Q value?
-        '''
-        #target_next_q = target_next_q
-        #main_q = main_q.mean(dim=1)
-
-
-        '''
-        Reward Norm
-        '''
-        # reward_batches = (reward_batches - reward_batches.mean(dim=0)) / reward_batches.std(dim=0) / 1024
-
         # Critic Loss
         self.critic.zero_grad()
         self.critic_optimizer.zero_grad()
@@ -163,12 +145,10 @@ class BiCNet():
         self.critic_optimizer.zero_grad()
         clear_action_batches = self.actor(state_batches)
         loss_actor = -self.critic(state_batches, clear_action_batches).mean()
-        # loss_actor += (clear_action_batches ** 2).mean() * 1e-3
         loss_actor.backward()
         torch.nn.utils.clip_grad_norm_(self.actor.parameters(), 0.5)
         self.actor_optimizer.step()
 
-        # This is for logging
         self.c_loss = loss_critic.item()
         self.a_loss = loss_actor.item()
 
