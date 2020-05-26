@@ -19,7 +19,6 @@ class CommNetWork_Actor(nn.Module):
 
 
     def forward(self, obs):
-        # 先对obs编码
         size = obs.view(-1, self.n_agents, self.input_shape).shape
         size0 = size[0]
 
