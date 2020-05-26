@@ -163,9 +163,6 @@ class CommNet():
         if self.train_num % 200 == 0:
             soft_update(self.actor, self.actor_target, self.config.tau)
             soft_update(self.critic, self.critic_target, self.config.tau)
-        if self.train_num % 10000 == 0:
-            torch.save(self.critic, 'trained_model/critic_episode' + str(self.train_num) +'.pth')
-            torch.save(self.actor, 'trained_model/actor_episode' + str(self.train_num) +'.pth')
 
         return sum(c_loss) / len(c_loss), sum(a_loss) / len(a_loss)
 
