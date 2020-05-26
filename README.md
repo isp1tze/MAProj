@@ -1,2 +1,2 @@
 # MAProj
- multi-agent project(bicnet, commnet, maddpg)
+ multi-agent project (commnet, bicnet, maddpg)
