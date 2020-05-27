@@ -28,6 +28,9 @@ INFERENCE:
 - cd MAProj/algo
 - python ma_main.py --algo maddpg --mode train
 
-## TO DO LIST
+## To do list
 - trained in more maps
 - fix graphics memory leak
+
+## Blog link
+https://zhuanlan.zhihu.com/p/143776727
