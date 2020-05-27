@@ -8,19 +8,19 @@ INFERENCE:
 - https://github.com/0b01/CommNet
 - https://github.com/starry-sky6688/StarCraft
  
- ## commnet: 
+ ## Commnet: 
  
 ![commnet](https://github.com/isp1tze/MAProj/blob/master/asset/commnet.gif)
 
- ## bicnet: 
+ ## Bicnet: 
  
 ![bicnet](https://github.com/isp1tze/MAProj/blob/master/asset/bicnet.gif)
 
- ## maddpg: 
+ ## Maddpg: 
  
 ![maddpg](https://github.com/isp1tze/MAProj/blob/master/asset/maddpg.gif)
 
-## training curves:
+## Training curves:
 ![curves](https://github.com/isp1tze/MAProj/blob/master/asset/curves.png)
 
 ## How to use
